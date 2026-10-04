@@ -1,0 +1,19 @@
+<%- include('header', { title: 'Мои заявки' }) %>
+
+<h1><%= title %></h1>
+<p>Пользователь: <strong><%= user.fio %></strong></p>
+
+<div class="row">
+    <% requests.forEach(function(reqItem) { %>
+        <div class="col-md-6 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title"><%= reqItem.room_name %></h5>
+                    <p class="card-text">Статус: <%= reqItem.status %></p>
+                </div>
+            </div>
+        </div>
+    <% }); %>
+</div>
+
+<%- include('footer') %>
